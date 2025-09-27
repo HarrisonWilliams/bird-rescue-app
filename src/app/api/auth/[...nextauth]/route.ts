@@ -1,18 +1,23 @@
-import NextAuth from "next-auth";
-import EmailProvider from "next-auth/providers/email";
 
-const handler = NextAuth({
-  providers: [
-    EmailProvider({
-      server: process.env.EMAIL_SERVER, // wire later
-      from: process.env.EMAIL_FROM, // wire later
-    }),
-  ],
-  callbacks: {
-    async session({ session }) {
-      return session;
-    }, // enrich later from Supabase
-  },
-});
+import { NextResponse } from "next/server";
 
-export { handler as GET, handler as POST };
+export const runtime = "edge";
+
+function notConfigured(method: string) {
+  return NextResponse.json(
+    {
+      error: "NextAuth is not configured",
+      message: `Received ${method} request but no auth providers are set up yet.`,
+    },
+    { status: 501 }
+  );
+}
+
+export async function GET() {
+  return notConfigured("GET");
+}
+
+export async function POST() {
+  return notConfigured("POST");
+}
+

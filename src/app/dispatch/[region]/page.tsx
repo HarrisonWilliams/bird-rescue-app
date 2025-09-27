@@ -14,3 +14,5 @@ export default async function RegionPage({ params }: RegionPageProps) {
   );
 }
 
+export const runtime = "edge";
+
