@@ -4,9 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-
-    "build": "next build && next-on-pages --skip-build",
-
+    "build": "vercel build --yes && next-on-pages --skip-build",
     "start": "wrangler pages dev .vercel/output/static --compatibility-flags=nodejs_compat",
     "lint": "next lint"
   },
@@ -29,8 +27,10 @@
     "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "15.5.4",
+    "vercel": "^47.0.0",
     "tailwindcss": "^4",
     "typescript": "^5",
     "wrangler": "^3.0.0"
   }
 }
+
