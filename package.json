@@ -1,4 +1,4 @@
-﻿{
+{
   "name": "bird-rescue-app",
   "version": "0.1.0",
   "private": true,
@@ -6,7 +6,7 @@
     "dev": "next dev",
     "build": "npx @cloudflare/next-on-pages@1",
     "start": "wrangler pages dev .vercel/output/static --compatibility-flags=nodejs_compat",
-    "lint": "eslint"
+    "lint": "next lint"
   },
   "dependencies": {
     "@stripe/stripe-js": "^7.9.0",
