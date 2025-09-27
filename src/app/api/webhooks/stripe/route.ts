@@ -1,10 +1,20 @@
+import type Stripe from "stripe";
 import { NextRequest, NextResponse } from "next/server";
 
-import { stripe } from "@/src/lib/stripe";
+import { getStripe } from "@/src/lib/stripe";
 
 export async function POST(req: NextRequest) {
   const sig = req.headers.get("stripe-signature") || "";
   const body = await req.text();
+
+  let stripe: Stripe;
+  try {
+    stripe = getStripe();
+  } catch (err: unknown) {
+    const message = err instanceof Error ? err.message : "Unknown error";
+    return new NextResponse(`Stripe client error: ${message}`, { status: 500 });
+  }
+
   let event;
 
   try {
