@@ -1,5 +1,7 @@
 import Stripe from "stripe";
 
+
+
 let stripe: Stripe | null = null;
 
 export function getStripe(): Stripe {
@@ -16,3 +18,4 @@ export function getStripe(): Stripe {
 
   return stripe;
 }
+

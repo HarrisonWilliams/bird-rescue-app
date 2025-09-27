@@ -1,3 +1,4 @@
+
 type RegionPageProps = {
   params: Promise<{ region: string }>;
 };
@@ -14,3 +15,4 @@ export default async function RegionPage({ params }: RegionPageProps) {
 }
 
 export const runtime = "edge";
+
