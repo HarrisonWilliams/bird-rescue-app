@@ -1,9 +1,9 @@
 
-type RegionPageProps = {
-  params: Promise<{ region: string }>;
-};
+export const runtime = "edge";
 
-export default async function RegionPage({ params }: RegionPageProps) {
+export default async function RegionPage(
+  { params }: { params: Promise<Record<string, string>> }
+) {
   const { region } = await params;
 
   return (
@@ -13,6 +13,4 @@ export default async function RegionPage({ params }: RegionPageProps) {
     </div>
   );
 }
-
-export const runtime = "edge";
 

@@ -2,20 +2,17 @@ import Link from "next/link";
 
 export default function Page() {
   return (
-    <section className="space-y-4">
-      <h1 className="text-3xl font-bold">Welcome to Bird Rescue UK</h1>
-      <p>Learn, connect, and coordinate rescues across the UK.</p>
-      <div className="grid md:grid-cols-3 gap-4">
-        <Link className="p-4 rounded-lg border bg-white" href="/how-to-get-started">
-          How to get started
-        </Link>
-        <Link className="p-4 rounded-lg border bg-white" href="/resources">
-          First aid &amp; ID guides
-        </Link>
-        <Link className="p-4 rounded-lg border bg-white" href="/dispatch">
-          See rescue requests
-        </Link>
-      </div>
+
+    <section className="space-y-6 p-8 rounded-xl border bg-white">
+      <h1 className="text-4xl font-extrabold">🐦 Bird Rescue UK — It works!</h1>
+      <p className="text-lg">Welcome. Use the nav to explore:</p>
+      <ul className="list-disc pl-6">
+        <li><Link className="underline" href="/resources">Resources</Link></li>
+        <li><Link className="underline" href="/dispatch">Dispatch</Link></li>
+        <li><Link className="underline" href="/volunteers">Volunteers</Link></li>
+        <li><Link className="underline" href="/premium">Premium</Link></li>
+      </ul>
+
     </section>
   );
 }
