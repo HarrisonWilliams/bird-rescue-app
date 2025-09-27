@@ -4,7 +4,9 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
+
     "build": "next build && next-on-pages --skip-build",
+
     "start": "wrangler pages dev .vercel/output/static --compatibility-flags=nodejs_compat",
     "lint": "next lint"
   },
@@ -32,4 +34,3 @@
     "wrangler": "^3.0.0"
   }
 }
-
