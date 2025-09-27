@@ -6,6 +6,7 @@ import { getStripe } from "@/src/lib/stripe";
 export async function POST(req: NextRequest) {
   const sig = req.headers.get("stripe-signature") || "";
   const body = await req.text();
+
   let stripe: Stripe;
   try {
     stripe = getStripe();
