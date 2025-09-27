@@ -4,7 +4,9 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
+
     "build": "node scripts/check-vercel-env.mjs && vercel build --yes && next-on-pages --skip-build",
+
     "start": "wrangler pages dev .vercel/output/static --compatibility-flags=nodejs_compat",
     "lint": "next lint"
   },
