@@ -1,3 +1,5 @@
+
+
 import { NextResponse } from "next/server";
 
 export const runtime = "edge";
@@ -19,3 +21,4 @@ export async function GET() {
 export async function POST() {
   return notConfigured("POST");
 }
+
