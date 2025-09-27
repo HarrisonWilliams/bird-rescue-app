@@ -1,7 +1,5 @@
-export default async function RegionPage(
-  { params }: { params: Promise<{ region: string }> }
-) {
-  const { region } = await params;
+export default async function RegionPage(props: any) {
+  const { region } = await props.params;
   return (
     <div>
       <h1 className="text-2xl font-semibold mb-2">Dispatch: {region}</h1>
