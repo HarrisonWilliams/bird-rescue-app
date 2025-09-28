@@ -1,6 +1,8 @@
+
 export default async function RegionPage(
   { params }: { params: Promise<Record<string, string>> }
 ) {
+
   const { region } = await params;
   return (
     <div>
