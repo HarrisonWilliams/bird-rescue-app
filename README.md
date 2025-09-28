@@ -37,8 +37,9 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/bui
 
 ## Cloudflare Pages build requirements
 
-The production build script runs `vercel build` to produce the `.vercel/output` directory that `next-on-pages` expects.
-The Vercel CLI requires an access token; without one it exits with `Error: The specified token is not valid`, which is the
-failure reported in the Cloudflare logs. Generate a personal token via `vercel login` and expose it to your Cloudflare
-Pages project as the `VERCEL_TOKEN` environment variable, or migrate to an OpenNext-based adapter that does not depend on
-the Vercel CLI.
+
+`npm run build` executes `scripts/build-pages.mjs`, which runs `next build` and converts the generated `.next` artifacts
+into a static `.vercel/output/static` directory plus a minimal `config.json`. Cloudflare Pages can publish this directory
+directly—no Vercel CLI authentication or tokens are required. Configure any secrets referenced in `.env.example` as
+environment variables inside your Pages project before deploying.
+

@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "next dev",
 
-    "build": "node scripts/check-vercel-env.mjs && vercel build --yes && next-on-pages --skip-build",
+    "build": "node scripts/build-pages.mjs",
 
     "start": "wrangler pages dev .vercel/output/static --compatibility-flags=nodejs_compat",
     "lint": "next lint"
@@ -21,7 +21,7 @@
     "zod": "^4.1.11"
   },
   "devDependencies": {
-    "@cloudflare/next-on-pages": "1.13.16",
+
     "@eslint/eslintrc": "^3",
     "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
