@@ -1,3 +1,4 @@
+
 const regions = ["london", "midlands", "north"] as const;
 
 export function generateStaticParams() {
@@ -5,6 +6,8 @@ export function generateStaticParams() {
 }
 
 export default async function RegionPage({ params }: { params: Promise<{ region: string }> }) {
+
+
   const { region } = await params;
   return (
     <div>
