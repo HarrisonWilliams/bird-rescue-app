@@ -1,12 +1,7 @@
 
-const regions = ["london", "midlands", "north"] as const;
-
-export function generateStaticParams() {
-  return regions.map((region) => ({ region }));
-}
-
-export default async function RegionPage({ params }: { params: Promise<{ region: string }> }) {
-
+export default async function RegionPage(
+  { params }: { params: Promise<Record<string, string>> }
+) {
 
   const { region } = await params;
   return (
